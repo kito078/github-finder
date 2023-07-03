@@ -9,9 +9,9 @@ function UserResults() {
 
   const { users, loading, fetchUsers } = useContext(GithubContext);
 
-  useEffect(() => {
-    // fetchUsers();
-  }, []);
+  // useEffect(() => {
+  //   fetchUsers();
+  // }, []);
 
   // const fetchUsers = async () => {
   //   const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`, {
