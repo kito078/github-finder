@@ -10,7 +10,7 @@ function UserResults() {
   const { users, loading, fetchUsers } = useContext(GithubContext);
 
   useEffect(() => {
-    fetchUsers();
+    // fetchUsers();
   }, []);
 
   // const fetchUsers = async () => {
