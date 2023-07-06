@@ -67,6 +67,26 @@ export const GithubProvider = ({ children }) => {
       });
     }
   };
+  //et single REPO
+  const getRepos = async (login) => {
+    setLoading();
+
+    const response = await fetch(`${GITHUB_URL}/users/${login}/repos`, {
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+      },
+    });
+
+    const data = await response.json();
+
+    // setUsers(data);
+    // setLoading(false);
+    // console.log(data);
+    dispatch({
+      type: "GET_USER",
+      payload: data,
+    });
+  };
 
   //Clear user from the state
   const clearUsers = () => dispatch({ type: "CLEAR_USERS" });
@@ -86,6 +106,7 @@ export const GithubProvider = ({ children }) => {
         searchUsers,
         clearUsers,
         getUser,
+        getRepos,
       }}
     >
       {children}

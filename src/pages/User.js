@@ -7,7 +7,7 @@ import Spinner from "../components/layout/Spiner";
 import RepoList from "../components/repos/RepoList";
 
 function User() {
-  const { getUser, user, loading } = useContext(GithubContext);
+  const { getUser, user, repos, loading } = useContext(GithubContext);
 
   const params = useParams();
 
@@ -26,7 +26,6 @@ function User() {
     blog,
     login,
     type,
-    repos,
     html_url,
     followers,
     following,
